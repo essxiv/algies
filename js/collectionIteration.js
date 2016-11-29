@@ -27,3 +27,14 @@ _.indexOf = function (array, target) {
     })
     return result
 }
+
+_.filter = function (collection, test) {
+    var results = []
+    _.each(collection, function(value) {
+        // implement test method you choose
+        if (test(val)) {
+            results.push(value)
+        }
+    })
+    return results
+}
