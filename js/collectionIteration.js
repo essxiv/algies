@@ -17,3 +17,13 @@ _.last = function (array, index) {
         return array.slice(array.length-n, array.length)
     }
 }
+
+_.indexOf = function (array, target) {
+    var result = -1
+    _.each(array, function (item, index) {
+        if (item === target && result === -1) {
+            result = index
+        }
+    })
+    return result
+}
