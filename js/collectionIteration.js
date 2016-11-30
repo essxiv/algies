@@ -38,3 +38,13 @@ _.filter = function (collection, test) {
     })
     return results
 }
+
+_.reject = function (collection, test) {
+    var results = []
+    _.each(collection, function (value) {
+        if(!test(value) {
+            results.push(value)
+        })
+    })
+    return results
+}
