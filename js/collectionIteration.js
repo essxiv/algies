@@ -84,3 +84,12 @@ _.reduce = function (collection, iterator, accumulator) {
     })
     return accumulator
 }
+
+_.contains = function(collection, target) {
+    return _.reduce(collection, function(found, item) {
+        if(found) {
+            return true
+        }
+        return item === target
+    }, false)
+}
