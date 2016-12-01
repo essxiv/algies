@@ -58,3 +58,11 @@ _.uniq = function (array) {
     })
     return result
 }
+
+_.map = function (collection, iterator) {
+    var result = []
+    _.each(collection, function (value, key, collection) {
+        result.push(iterator(value, key, collection))
+    })
+    return result
+}
