@@ -48,3 +48,13 @@ _.reject = function (collection, test) {
     })
     return results
 }
+
+_.uniq = function (array) {
+    var result = []
+    _.each(array, function (value) {
+        if (_.indexOf(result, value) === -1) {
+            result.push(value)
+        }
+    })
+    return result
+}
