@@ -104,3 +104,21 @@ _.every = function(collection, iterator) {
         }
     }, true)
 }
+
+_.some = function(collection, iterator) {
+    var collectionLength = collection.length
+    if(collectionLength === 0) {
+        return false
+    }
+    if(!iterator) {
+        iterator = function(element) {
+            return element
+        }
+    }
+    return _.reduce(collection, function(pass, value) {
+        if(pass) {
+            return true
+        }
+        return iterator(value) ? true : false
+    }, false)
+}
