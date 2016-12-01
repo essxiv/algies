@@ -72,3 +72,15 @@ _.pluck = function (collection, key) {
         return item[key]
     })
 }
+
+_.reduce = function (collection, iterator, accumulator) {
+    var accumulator = accumulator
+    _.each(collection, function (value) {
+        if (accumulator === undefined) {
+            accumulator = value
+        } else {
+            accumulator = iterator(accumulator, value)
+        }
+    })
+    return accumulator
+}
