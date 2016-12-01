@@ -93,3 +93,14 @@ _.contains = function(collection, target) {
         return item === target
     }, false)
 }
+
+_.every = function(collection, iterator) {
+    var iterator = iterator || _.identity
+    return _.reduce(collection, function(test, value) {
+        if(test) {
+            return iterator(value)
+        } else {
+            return false
+        }
+    }, true)
+}
