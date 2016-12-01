@@ -66,3 +66,9 @@ _.map = function (collection, iterator) {
     })
     return result
 }
+
+_.pluck = function (collection, key) {
+    return _.map(collection, function(item) {
+        return item[key]
+    })
+}
